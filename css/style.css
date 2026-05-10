@@ -1,0 +1,370 @@
+body{
+    background-color: #e0f7ff; /* fallback light blue */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Smooth hover effect with underline */
+.nav-link {
+    position: relative;       /* Needed for positioning the underline */
+    color: #000;              /* Default text color: black */
+    transition: all 0.3s;     /* Smooth transition for any change (hover etc.) */
+    font-weight: 500;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: lightgreen;
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffffff;           /* Text turns white */
+    background-color: #0d6efd; /* Blue background on hover */
+    border-radius: 5px;       /* Rounded corners for hover */
+}
+
+.nav-link:hover::after {
+    width: 100%;              /* Underline expands to full width of the link */
+}
+
+/* Home Section Styling */
+#home {
+    background: linear-gradient(135deg, #0d6efd, #00c6ff);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+}
+
+#home p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#home .btn-primary {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#home .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* --------------- About Section -----------------*/
+
+/* About Section Styling */
+#about {
+    background: linear-gradient(to right, #e0f7fa, #f0f8ff);
+    color: #000;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Heading Styling */
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #0d6efd;
+    position: relative;
+}
+
+/* Underline Animation */
+#about h2::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #0d6efd;
+    display: block;
+    margin: 8px auto 0;
+    transition: width 0.4s ease;
+}
+
+#about h2:hover::after {
+    width: 50%;
+}
+
+/* Paragraph */
+#about .about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* Skills Icons */
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.skills-icons .skill {
+    font-size: 2rem;
+    color: #0d6efd;
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effect for skills */
+.skills-icons .skill:hover {
+    color: #198754;
+    transform: scale(1.3);
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about h2, #about .about-text, #about .skills-icons {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+#about h2 {
+    animation-delay: 0.2s;
+}
+
+#about .about-text {
+    animation-delay: 0.5s;
+}
+
+#about .skills-icons {
+    animation-delay: 0.8s;
+}
+
+/* --------------- Project/ Work Section -----------------*/
+
+/* Projects / Work Section */
+#projects {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+    color: #333;
+}
+
+/* Section Title */
+#projects .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#projects .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Work Card */
+.work-card {
+    background: #ffffff;
+    border-left: 5px solid #0d6efd;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+/* Role & Duration */
+.role-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.work-duration {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.company-name {
+    font-size: 1rem;
+    color: #495057;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Highlights */
+.work-highlights {
+    list-style-type: disc;
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+.work-highlights li {
+    margin-bottom: 10px;
+}
+
+/* --------------- Skills Section -----------------*/
+/* Skills Section */
+#skills {
+    background-color: #f1f5f9; /* light background for contrast */
+    color: #333;
+    padding: 80px 20px;
+}
+
+/* Section Title */
+#skills .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#skills .section-title::after {
+    content: '';
+    display: block;
+    width: 80px; /* fixed width */
+    height: 3px;
+    background-color: #0d6efd;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Skills Card */
+.skills-card {
+    background: #ffffff;
+    padding: 25px;
+    border-left: 5px solid #0d6efd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+/* Card Titles */
+.skills-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+/* Skills & Achievements List */
+.skills-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Links in Achievements */
+.skills-list a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.skills-list a:hover {
+    text-decoration: underline;
+}
+
+/* --------------- Contact Section -----------------*/
+
+/* Contact Section */
+#contact {
+    background-color: #f0f8ff; /* light blue background */
+    color: #000;
+    padding: 60px 0;
+}
+
+#contact .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#contact .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    
+}
+
+#contact .contact-tagline {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#contact .contact-links .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    border: 1px solid #0d6efd;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+#contact .contact-links .contact-item:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    transform: translateY(-3px);
+}
